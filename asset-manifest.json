@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/bibit-ux-test/static/css/main.043ddde5.css",
-    "main.js": "/bibit-ux-test/static/js/main.9c9fe458.js",
-    "static/js/787.b3b55545.chunk.js": "/bibit-ux-test/static/js/787.b3b55545.chunk.js",
-    "index.html": "/bibit-ux-test/index.html",
-    "main.043ddde5.css.map": "/bibit-ux-test/static/css/main.043ddde5.css.map",
-    "main.9c9fe458.js.map": "/bibit-ux-test/static/js/main.9c9fe458.js.map",
-    "787.b3b55545.chunk.js.map": "/bibit-ux-test/static/js/787.b3b55545.chunk.js.map"
+    "main.css": "/static/css/main.043ddde5.css",
+    "main.js": "/static/js/main.c7655d14.js",
+    "static/js/787.b3b55545.chunk.js": "/static/js/787.b3b55545.chunk.js",
+    "static/media/rocket.svg": "/static/media/rocket.f3c21f7ee225cadf3a87eb1a2ec029b0.svg",
+    "index.html": "/index.html",
+    "static/media/wave-1.svg": "/static/media/wave-1.be8ce06cfa020a19b00797753cf3e4f8.svg",
+    "main.043ddde5.css.map": "/static/css/main.043ddde5.css.map",
+    "main.c7655d14.js.map": "/static/js/main.c7655d14.js.map",
+    "787.b3b55545.chunk.js.map": "/static/js/787.b3b55545.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.043ddde5.css",
-    "static/js/main.9c9fe458.js"
+    "static/js/main.c7655d14.js"
   ]
 }
