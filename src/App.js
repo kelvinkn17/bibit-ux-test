@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import AppTab from './components/AppTab';
+import IntroHero from './components/IntroHero';
+import PluangSection from './components/PluangSection';
+import PintuSection from './components/PintuSection';
 
 function App() {
+  const [selectedTab, setSelectedTab] = useState("pluang");
+  const onChangeTab = (tab) => {
+    setSelectedTab(tab);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <IntroHero />
+
+      <AppTab selectedTab={selectedTab} onChange={onChangeTab} />
+
+      {selectedTab === "pluang" &&
+        <PluangSection />
+      }
+
+      {selectedTab === "pintu" &&
+        <PintuSection />
+      }
     </div>
   );
 }
