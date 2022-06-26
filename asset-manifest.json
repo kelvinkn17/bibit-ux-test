@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bibit-ux-test/static/css/main.043ddde5.css",
-    "main.js": "/bibit-ux-test/static/js/main.4a71e32d.js",
+    "main.css": "/bibit-ux-test/static/css/main.907e3d9c.css",
+    "main.js": "/bibit-ux-test/static/js/main.464d2d5a.js",
     "static/js/787.b3b55545.chunk.js": "/bibit-ux-test/static/js/787.b3b55545.chunk.js",
     "index.html": "/bibit-ux-test/index.html",
-    "main.043ddde5.css.map": "/bibit-ux-test/static/css/main.043ddde5.css.map",
-    "main.4a71e32d.js.map": "/bibit-ux-test/static/js/main.4a71e32d.js.map",
+    "main.907e3d9c.css.map": "/bibit-ux-test/static/css/main.907e3d9c.css.map",
+    "main.464d2d5a.js.map": "/bibit-ux-test/static/js/main.464d2d5a.js.map",
     "787.b3b55545.chunk.js.map": "/bibit-ux-test/static/js/787.b3b55545.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.043ddde5.css",
-    "static/js/main.4a71e32d.js"
+    "static/css/main.907e3d9c.css",
+    "static/js/main.464d2d5a.js"
   ]
 }
