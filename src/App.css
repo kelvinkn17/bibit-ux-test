@@ -4,6 +4,11 @@
     --grey: #D1D1D1;   
     --pluang-color: #4A98F7;
     --pintu-color: #1AE0B0;
+    --warning: #FFD426;
+    --warning-light: #EDDD9C;
+    --warning-dark: #AC8A00;
+    --success-dark: #56AC00;
+    --success-light: #BEED9C;
 }
 
 .poppins-font{
@@ -50,4 +55,64 @@ button{
 
 button:active{
     filter: brightness(1.1);
+}
+
+.warning-label{
+    border-radius: 100px;
+    background-color: var(--warning-light);
+    color: var(--warning-dark);
+    border: 1px solid var(--warning-dark);
+    padding: 0.5rem 1rem;
+    width: fit-content;
+}
+
+.solution-label{
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    background-color: var(--success-light);
+    color: var(--success-dark);
+    border: 1px solid var(--success-dark);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.polka-bg{
+    background-color: #FAFAFF;
+    opacity: 0.3;
+    background-image:  radial-gradient(#5E5FEB 1.2000000000000002px, transparent 1.2000000000000002px), radial-gradient(#5E5FEB 1.2000000000000002px, #FAFAFF 1.2000000000000002px);
+    background-size: 48px 48px;
+    background-position: 0 0,24px 24px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.before-after-slider{
+    width: 20rem !important;
+    min-width: 20rem !important;
+    border-radius: 1rem !important;
+    border: 2px solid #5E5FEB;
+    overflow: hidden;
+}
+
+.tab-btn{
+    border-radius: 100px;
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.tab-btn-active{
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+.before-after-slider__delimiter-icon{
+    background-color: #5E5FEB !important;
 }

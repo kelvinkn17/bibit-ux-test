@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AppTab from './components/AppTab';
 import IntroHero from './components/IntroHero';
 import PluangSection from './components/PluangSection';
