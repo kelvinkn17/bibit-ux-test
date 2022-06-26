@@ -20,7 +20,7 @@ function App() {
       <AppTab selectedTab={selectedTab} onChange={onChangeTab} />
 
       {selectedTab === "pluang" &&
-        <PluangSection />
+        <PluangSection onChangeTab={onChangeTab} />
       }
 
       {selectedTab === "pintu" &&

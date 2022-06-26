@@ -4,7 +4,7 @@ import { useState } from "react";
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 
-export default function PluangSection(){
+export default function PluangSection({ onChangeTab }){
     const theme = useTheme();
     const isTablet = useMediaQuery(theme.breakpoints.up('md'));
     const isMobile = useMediaQuery(theme.breakpoints.up('sm'));
@@ -19,6 +19,7 @@ export default function PluangSection(){
     const [caseTab, setCaseTab] = useState(1);
     const onChangeCaseTab = (tab) => {
         setCaseTab(tab);
+        document.getElementById("section-tab").scrollIntoView({ behavior: 'smooth' });
     }
 
     return(
@@ -42,7 +43,7 @@ export default function PluangSection(){
                     </Grid>
                     
                     <Stack alignItems="center" style={{ width: '100%', paddingBottom: '2rem' }}>
-                        <Stack alignItems="center" direction="row" spacing="0.5rem" style={{ borderRadius: '100px', padding: '0.4rem', border: '1px solid var(--grey)', width: '100%', marginTop: '0.5rem', maxWidth: '30rem', backgroundColor: 'white' }}>
+                        <Stack id="section-tab" alignItems="center" direction="row" spacing="0.5rem" style={{ borderRadius: '100px', padding: '0.4rem', border: '1px solid var(--grey)', width: '100%', marginTop: '0.5rem', maxWidth: '30rem', backgroundColor: 'white' }}>
                             <button onClick={() => onChangeCaseTab(1)} className={`tab-btn ${caseTab === 1 && "tab-btn-active"}`} style={{ width: '50%', border: '1px solid var(--grey)', textAlign: 'center' }}>
                                 Flow Jual Beli
                             </button>
@@ -60,7 +61,7 @@ export default function PluangSection(){
                 {/* FLOW JUAL BELI */}
                 {caseTab === 1 &&
                     <>
-                        <Container maxWidth="xl" style={{ zIndex: 5 }}>
+                        <Container id='pluang-flow-section' maxWidth="xl" style={{ zIndex: 5 }}>
                             <Grid container>
                                 {/* 1. GESTURE SWIPE */}
                                 <Grid item xs={12} style={{ paddingTop: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--grey)'}}>
@@ -311,7 +312,7 @@ export default function PluangSection(){
                 {/* PAGE DETIL KRIPTO */}
                 {caseTab === 2 &&
                     <>
-                        <Container maxWidth="xl" style={{ zIndex: 5 }}>
+                        <Container id="pluang-detail-section" maxWidth="xl" style={{ zIndex: 5 }}>
                             <Grid container>
                                 {/* 1. TIMEFRAME */}
                                 <Grid item xs={12} style={{ paddingTop: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--grey)'}}>
@@ -495,6 +496,66 @@ export default function PluangSection(){
                                         </Stack>
                                     </Stack>
                                 </Grid>
+
+                                {/* 4. LABA RUGI ANEH */}
+                                <Grid item xs={12} style={{ paddingTop: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--grey)'}}>
+                                    <Stack direction="row">
+                                        <Stack style={{ marginRight: '1rem'}}>
+                                            <Typography variant="h4" style={{ fontWeight: '700', marginBottom: '0.4rem' }}>
+                                                4. Persentase laba rugi tidak relevan ketika ada bonus.
+                                            </Typography>
+
+                                            <div className="warning-label">
+                                                Informasi yang ambigu dan salah.
+                                            </div>
+
+                                            {!isMobile &&
+                                                <ReactBeforeSliderComponent 
+                                                    secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-after.jpg' }}
+                                                    firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-before.jpg' }}
+                                                    className="before-after-slider mx-auto mt-4"
+                                                    delimiterColor="#5E5FEB30"
+                                                />
+                                            }
+
+                                            <Stack spacing="1rem" style={{ marginTop: '2rem' }}>
+                                                <Stack direction="row" alignItems="center">
+                                                    <img src="/bibit-ux-test/img/bullet.svg" alt="" style={{ width: '1rem', marginRight: '0.6rem' }} />
+                                                    <Typography variant="body">
+                                                    Ketika user mendapatkan reward bitcoin saat pendaftaran awal, persentase laba rugi menjadi sangat besar.
+                                                    </Typography>
+                                                </Stack>
+
+                                                <Stack direction="row" alignItems="center">
+                                                    <img src="/bibit-ux-test/img/bullet.svg" alt="" style={{ width: '1rem', marginRight: '0.6rem' }} />
+                                                    <Typography variant="body">
+                                                        Hal ini dapat menimbulkan salah tafsir bagi pengguna.
+                                                    </Typography>
+                                                </Stack>
+                                            </Stack>
+
+                                            <div className="solution-label" style={{ marginTop: '2rem' }}>
+                                                <img src="/bibit-ux-test/img/lamp.svg" alt="" style={{ width: '10rem', position: 'absolute', opacity: '0.15', right: '-5rem', bottom: 0 }} />
+
+                                                <div>
+                                                    <Typography variant="h6">
+                                                        Solusi
+                                                    </Typography>
+                                                    Membenarkan operasi perhitungan persentase laba rugi seperti layaknya, menganggap bonus sebagai pembelian pada tanggal diambilnya.
+                                                </div>
+                                            </div>
+                                        </Stack>
+
+                                        {isMobile &&
+                                            <ReactBeforeSliderComponent 
+                                                secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-after.jpg' }}
+                                                firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-before.jpg' }}
+                                                className="before-after-slider ms-auto"
+                                                delimiterColor="#5E5FEB30"
+                                            />
+                                        }
+                                    </Stack>
+                                </Grid>
                                 
                             </Grid>
                         </Container>
@@ -503,10 +564,10 @@ export default function PluangSection(){
                             <Container maxWidth="xl">
                                 <Stack alignItems="center" style={{ width: '100%', paddingBottom: '2rem', paddingTop: '2rem' }}>
                                     <Typography variant="h6" style={{ color: 'white' }}>
-                                        Lanjut ke halaman detil kripto
+                                        Lanjut ke Case Pintu
                                     </Typography>
-                                    <button onClick={() => onChangeCaseTab(2)} className="tab-btn tab-btn-active" style={{ fontSize: '1rem', padding: '0.6rem 1rem'}}>
-                                        Detil Kripto
+                                    <button onClick={() => onChangeTab('pintu')} className="tab-btn tab-btn-active" style={{ fontSize: '1rem', padding: '0.6rem 1rem'}}>
+                                        Case Pintu
                                     </button>
                                 </Stack>
                             </Container>
