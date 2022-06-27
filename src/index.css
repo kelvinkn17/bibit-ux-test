@@ -3,6 +3,14 @@
     html{
         font-size: 10px;
     }
+
+    .before-after{
+        width: 100%;
+        max-width: 38rem;
+        height: fit-content;
+        margin-inline: auto;
+        min-width: 40%;
+    }
 }
 
 @media (min-width: 300px) {
@@ -20,6 +28,12 @@
 @media (min-width: 768px) {
     html{
         font-size: 14px;
+    }
+}
+
+@media (min-width: 900px) {
+    .before-after{
+        margin-inline: unset;
     }
 }
 

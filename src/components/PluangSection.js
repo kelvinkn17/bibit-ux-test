@@ -1,13 +1,11 @@
 import { Container, Typography, Stack, Grid, useTheme, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 
-import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 
 export default function PluangSection({ onChangeTab }){
     const theme = useTheme();
     const isTablet = useMediaQuery(theme.breakpoints.up('md'));
-    const isMobile = useMediaQuery(theme.breakpoints.up('sm'));
 
     // jumlah penjualan
     const [solusiPenjualanTab, setSolusiPenjualanTab] = useState(1);
@@ -30,13 +28,9 @@ export default function PluangSection({ onChangeTab }){
                         <Grid item xs={12} md={8} style={{ padding: '1rem' }}>
                             <Stack style={{ paddingTop: '2rem', paddingBottom: '2rem', color: 'white'}}>
                                 <Typography variant="h6" style={{ fontWeight: '400'}}>
-                                    Menurut saya, Pluang sudah berfungsi dengan baik dalam memfasilitasi para orang awam untuk dapat berinvestasi pada aset kripto. 
+                                    Menurut saya, Pluang sudah berfungsi dengan baik dalam memfasilitasi para orang awam untuk dapat berinvestasi pada aset kripto. Dibandingkan aplikasi Pintu, tampilan dan <i>flow</i> aplikasi lebih simpel, <i>clean</i>, dan mudah digunakan.
                                     <br/><br/>
                                     Walau begitu, ada beberapa hal yang dapat dikembangkan menurut saya berdasarkan user merupakan orang awam yang baru mengenal kripto.
-                                </Typography>
-
-                                <Typography variant="caption" style={{ marginTop: '1rem'}}>
-                                    *Geser slider ke kanan untuk menampilkan tampilan setelah direvisi.
                                 </Typography>
                             </Stack>
                         </Grid>
@@ -61,19 +55,17 @@ export default function PluangSection({ onChangeTab }){
                 {/* FLOW JUAL BELI */}
                 {caseTab === 1 &&
                     <>
+                        <Container maxWidth="lg" style={{ paddingTop: '4rem', textAlign: 'center' }}>
+                            Untuk <i>flow</i> jual/beli sendiri saya tidak menemukan kekurangan yang berarti karena sudah sangat mudah dan simpel digunakan, saya lebih akan membahas tentang komponen-komponen yang terlibat pada <i>flow ini.</i>
+                        </Container>
+
                         <Container id='pluang-flow-section' maxWidth="xl" style={{ zIndex: 5 }}>
                             <Grid container>
                                 {/* 1. GESTURE SWIPE */}
                                 <Grid item xs={12} style={{ paddingTop: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--grey)'}}>
                                     <Stack spacing="1rem" direction="row">
-
-                                        {isMobile &&
-                                            <ReactBeforeSliderComponent 
-                                                secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/swipeup-after.jpg' }}
-                                                firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/swipeup-before.jpg' }}
-                                                className="before-after-slider"
-                                                delimiterColor="#5E5FEB30"
-                                            />
+                                        {isTablet &&
+                                            <img src="/bibit-ux-test/img/pluang/swipeup.jpg" alt="" className="before-after" />
                                         }
 
                                         <Stack>
@@ -85,13 +77,8 @@ export default function PluangSection({ onChangeTab }){
                                                 Rentan salah dan <i>not undoable</i>
                                             </div>
 
-                                            {!isMobile &&
-                                                <ReactBeforeSliderComponent 
-                                                    secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/swipeup-after.jpg' }}
-                                                    firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/swipeup-before.jpg' }}
-                                                    className="before-after-slider mx-auto mt-4"
-                                                    delimiterColor="#5E5FEB30"
-                                                />
+                                            {!isTablet &&
+                                                <img src="/bibit-ux-test/img/pluang/swipeup.jpg" alt="" className="before-after" />
                                             }
 
                                             <Stack spacing="1rem" style={{ marginTop: '2rem' }}>
@@ -143,13 +130,8 @@ export default function PluangSection({ onChangeTab }){
                                                 Memiliki ketidak jelasan informasi
                                             </div>
 
-                                            {!isMobile &&
-                                                <ReactBeforeSliderComponent 
-                                                    secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/limitorder-after.jpg' }}
-                                                    firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/limitorder-before.jpg' }}
-                                                    className="before-after-slider mx-auto mt-4"
-                                                    delimiterColor="#5E5FEB30"
-                                                />
+                                            {!isTablet &&
+                                                <img src="/bibit-ux-test/img/pluang/limitorder.jpg" alt="" className="before-after" />
                                             }
 
                                             <Stack spacing="1rem" style={{ marginTop: '2rem' }}>
@@ -173,13 +155,8 @@ export default function PluangSection({ onChangeTab }){
                                             </div>
                                         </Stack>
 
-                                        {isMobile &&
-                                            <ReactBeforeSliderComponent 
-                                                secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/limitorder-after.jpg' }}
-                                                firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/limitorder-before.jpg' }}
-                                                className="before-after-slider ms-auto"
-                                                delimiterColor="#5E5FEB30"
-                                            />
+                                        {isTablet &&
+                                            <img src="/bibit-ux-test/img/pluang/limitorder.jpg" alt="" className="before-after" />
                                         }
                                     </Stack>
                                 </Grid>
@@ -187,24 +164,14 @@ export default function PluangSection({ onChangeTab }){
                                 {/* 3. JUMLAH PENJUALAN */}
                                 <Grid item xs={12} style={{ paddingTop: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--grey)'}}>
                                     <Stack direction="row">
-                                        {isMobile &&
-                                            <Stack alignItems="center" >
+                                        {isTablet &&
+                                            <Stack alignItems="center" style={{ width: '100%', maxWidth: '38rem', minWidth: '40%' }} >
                                                 {solusiPenjualanTab === 1 &&
-                                                    <ReactBeforeSliderComponent 
-                                                        secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-after1.jpg' }}
-                                                        firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-before.jpg' }}
-                                                        className="before-after-slider"
-                                                        delimiterColor="#5E5FEB30"
-                                                    />
+                                                    <img src="/bibit-ux-test/img/pluang/jualamount1.jpg" alt="" className="before-after" />
                                                 }
 
                                                 {solusiPenjualanTab === 2 &&
-                                                    <ReactBeforeSliderComponent 
-                                                        secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-after2.jpg' }}
-                                                        firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-before.jpg' }}
-                                                        className="before-after-slider"
-                                                        delimiterColor="#5E5FEB30"
-                                                    />
+                                                    <img src="/bibit-ux-test/img/pluang/jualamount2.jpg" alt="" className="before-after" />
                                                 }
                                                 
                                                 <Stack alignItems="center" direction="row" spacing="0.5rem" style={{ borderRadius: '100px', padding: '0.4rem', border: '1px solid var(--grey)', width: '100%', marginTop: '0.5rem' }}>
@@ -227,24 +194,14 @@ export default function PluangSection({ onChangeTab }){
                                                 Sangat sulit untuk mendapatkan target jumlah nominal rupiah yang sesuai
                                             </div>
 
-                                            {!isMobile &&
-                                                <Stack alignItems="center" >
+                                            {!isTablet &&
+                                                <Stack alignItems="center" style={{ width: '100%', maxWidth: '38rem', marginInline: 'auto' }} >
                                                     {solusiPenjualanTab === 1 &&
-                                                        <ReactBeforeSliderComponent 
-                                                            secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-after1.jpg' }}
-                                                            firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-before.jpg' }}
-                                                            className="before-after-slider mx-auto mt-4"
-                                                            delimiterColor="#5E5FEB30"
-                                                        />
+                                                        <img src="/bibit-ux-test/img/pluang/jualamount1.jpg" alt="" className="before-after" />
                                                     }
 
                                                     {solusiPenjualanTab === 2 &&
-                                                        <ReactBeforeSliderComponent 
-                                                            secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-after2.jpg' }}
-                                                            firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/jualamount-before.jpg' }}
-                                                            className="before-after-slider mx-auto mt-4"
-                                                            delimiterColor="#5E5FEB30"
-                                                        />
+                                                        <img src="/bibit-ux-test/img/pluang/jualamount2.jpg" alt="" className="before-after" />
                                                     }
                                                     
                                                     <Stack alignItems="center" direction="row" spacing="0.5rem" style={{ borderRadius: '100px', padding: '0.4rem', border: '1px solid var(--grey)', width: '100%', marginTop: '0.5rem', maxWidth: '20rem' }}>
@@ -318,13 +275,8 @@ export default function PluangSection({ onChangeTab }){
                                 <Grid item xs={12} style={{ paddingTop: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--grey)'}}>
                                     <Stack spacing="1rem" direction="row">
 
-                                        {isMobile &&
-                                            <ReactBeforeSliderComponent 
-                                                secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/timeframe-after.jpg' }}
-                                                firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/timeframe-before.jpg' }}
-                                                className="before-after-slider"
-                                                delimiterColor="#5E5FEB30"
-                                            />
+                                        {isTablet &&
+                                            <img src="/bibit-ux-test/img/pluang/timeframe.jpg" alt="" className="before-after" />
                                         }
 
                                         <Stack>
@@ -336,13 +288,8 @@ export default function PluangSection({ onChangeTab }){
                                                 Inkonsistensi informasi dan merusak estetika
                                             </div>
 
-                                            {!isMobile &&
-                                                <ReactBeforeSliderComponent 
-                                                    secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/timeframe-after.jpg' }}
-                                                    firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/timeframe-before.jpg' }}
-                                                    className="before-after-slider mx-auto mt-4"
-                                                    delimiterColor="#5E5FEB30"
-                                                />
+                                            {!isTablet &&
+                                                <img src="/bibit-ux-test/img/pluang/timeframe.jpg" alt="" className="before-after" />
                                             }
 
                                             <Stack spacing="1rem" style={{ marginTop: '2rem' }}>
@@ -394,13 +341,8 @@ export default function PluangSection({ onChangeTab }){
                                                 Perbedaan bentuk informasi
                                             </div>
 
-                                            {!isMobile &&
-                                                <ReactBeforeSliderComponent 
-                                                    secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/usd-after.jpg' }}
-                                                    firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/usd-before.jpg' }}
-                                                    className="before-after-slider mx-auto mt-4"
-                                                    delimiterColor="#5E5FEB30"
-                                                />
+                                            {!isTablet &&
+                                                <img src="/bibit-ux-test/img/pluang/usd.jpg" alt="" className="before-after" />
                                             }
 
                                             <Stack spacing="1rem" style={{ marginTop: '2rem' }}>
@@ -431,13 +373,8 @@ export default function PluangSection({ onChangeTab }){
                                             </div>
                                         </Stack>
 
-                                        {isMobile &&
-                                            <ReactBeforeSliderComponent 
-                                                secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/usd-after.jpg' }}
-                                                firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/usd-before.jpg' }}
-                                                className="before-after-slider ms-auto"
-                                                delimiterColor="#5E5FEB30"
-                                            />
+                                        {isTablet &&
+                                            <img src="/bibit-ux-test/img/pluang/usd.jpg" alt="" className="before-after" />
                                         }
                                     </Stack>
                                 </Grid>
@@ -445,13 +382,8 @@ export default function PluangSection({ onChangeTab }){
                                 {/* 3. INFORMASI KRIPTO SEDIKIT */}
                                 <Grid item xs={12} style={{ paddingTop: '4rem', paddingBottom: '4rem', borderBottom: '1px solid var(--grey)'}}>
                                     <Stack direction="row">
-                                        {isMobile &&
-                                            <ReactBeforeSliderComponent 
-                                                secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/linking-after.jpg' }}
-                                                firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/linking-before.jpg' }}
-                                                className="before-after-slider"
-                                                delimiterColor="#5E5FEB30"
-                                            />
+                                        {isTablet &&
+                                            <img src="/bibit-ux-test/img/pluang/linking.jpg" alt="" className="before-after" />
                                         }
 
                                         <Stack style={{ marginLeft: '1rem'}}>
@@ -463,13 +395,8 @@ export default function PluangSection({ onChangeTab }){
                                                 Pengguna harus mencari informasi lebih lanjut sendiri secara manual
                                             </div>
 
-                                            {!isMobile &&
-                                                <ReactBeforeSliderComponent 
-                                                    secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/linking-after.jpg' }}
-                                                    firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/linking-before.jpg' }}
-                                                    className="before-after-slider mx-auto mt-4"
-                                                    delimiterColor="#5E5FEB30"
-                                                />
+                                            {!isTablet &&
+                                                <img src="/bibit-ux-test/img/pluang/linking.jpg" alt="" className="before-after" />
                                             }
 
                                             <Stack spacing="1rem" style={{ marginTop: '2rem' }}>
@@ -509,13 +436,8 @@ export default function PluangSection({ onChangeTab }){
                                                 Informasi yang ambigu dan salah.
                                             </div>
 
-                                            {!isMobile &&
-                                                <ReactBeforeSliderComponent 
-                                                    secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-after.jpg' }}
-                                                    firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-before.jpg' }}
-                                                    className="before-after-slider mx-auto mt-4"
-                                                    delimiterColor="#5E5FEB30"
-                                                />
+                                            {!isTablet &&
+                                                <img src="/bibit-ux-test/img/pluang/bonus.jpg" alt="" className="before-after" />
                                             }
 
                                             <Stack spacing="1rem" style={{ marginTop: '2rem' }}>
@@ -546,13 +468,8 @@ export default function PluangSection({ onChangeTab }){
                                             </div>
                                         </Stack>
 
-                                        {isMobile &&
-                                            <ReactBeforeSliderComponent 
-                                                secondImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-after.jpg' }}
-                                                firstImage={{ imageUrl: '/bibit-ux-test/img/pluang/bonus-before.jpg' }}
-                                                className="before-after-slider ms-auto"
-                                                delimiterColor="#5E5FEB30"
-                                            />
+                                        {isTablet &&
+                                            <img src="/bibit-ux-test/img/pluang/bonus.jpg" alt="" className="before-after" />
                                         }
                                     </Stack>
                                 </Grid>
