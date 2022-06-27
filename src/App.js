@@ -8,7 +8,7 @@ import PluangSection from './components/PluangSection';
 import PintuSection from './components/PintuSection';
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState("pintu");
+  const [selectedTab, setSelectedTab] = useState("pluang");
   const onChangeTab = (tab) => {
     setSelectedTab(tab);
     document.getElementById("app-tab").scrollIntoView({ behavior: 'smooth' });
